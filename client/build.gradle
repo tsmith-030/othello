@@ -1,0 +1,24 @@
+apply plugin: 'java'
+
+buildscript {
+	ext {
+		springBootVersion = '1.4.5.RELEASE'
+		artifactoryUrl = 'https://artifactory.allstate.com/artifactory/libs-release'
+		artifactoryReleaseUrl = 'https://artifactory.allstate.com/artifactory/libs-release-local'
+	}
+
+	repositories {
+		maven {
+			url artifactoryUrl
+		}
+	}
+
+	dependencies {
+		classpath 'org.cloudfoundry:cf-gradle-plugin:1.1.1'
+	}
+}
+
+
+group 'com.allstate.cts'
+version = '1.0'
+sourceCompatibility = 1.8
